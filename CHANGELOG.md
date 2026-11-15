@@ -4,6 +4,13 @@ All notable changes to **KDE Bing Wallpaper Timezone Sync** (`kde-bing-potd-refr
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.1.1](https://github.com/russellmilliner/kde-bing-potd-refresh/releases/tag/v0.1.1) — 2026-11-15
+
+### Fixed
+- Configured `pythonpath = ["src"]` under `[tool.pytest.ini_options]` in `pyproject.toml` so `pytest -v` imports `kde_bing_potd_refresh` directly without requiring `PYTHONPATH=src` or editable install.
+- Updated `[build-system]` in `pyproject.toml` and GitHub Actions CI setup to require `setuptools>=77` for PEP 639 SPDX `license = "Apache-2.0"` support.
+- Added post-build wheel installation and `kde-bing-potd-refresh --version` entrypoint verification in `.github/workflows/ci.yml`.
+
 ## [v0.1.0](https://github.com/russellmilliner/kde-bing-potd-refresh/releases/tag/v0.1.0) — 2026-11-15
 
 ### Added

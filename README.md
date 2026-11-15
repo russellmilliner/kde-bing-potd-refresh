@@ -1,7 +1,7 @@
 # KDE Bing Wallpaper Timezone Sync (`kde-bing-potd-refresh`)
 
-[![Version](https://img.shields.io/badge/Version-v0.1.0-0284c7?style=for-the-badge&logo=github)](https://github.com/russellmilliner/kde-bing-potd-refresh/releases/tag/v0.1.0)
-[![Release Archive](https://img.shields.io/badge/Release-Download_v0.1.0-10b981?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/russellmilliner/kde-bing-potd-refresh/releases/download/v0.1.0/kde-bing-potd-refresh-0.1.0-1-any.pkg.tar.zst)
+[![Version](https://img.shields.io/badge/Version-v0.1.1-0284c7?style=for-the-badge&logo=github)](https://github.com/russellmilliner/kde-bing-potd-refresh/releases/tag/v0.1.1)
+[![Release Archive](https://img.shields.io/badge/Release-Download_v0.1.1-10b981?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/russellmilliner/kde-bing-potd-refresh/releases/download/v0.1.1/kde-bing-potd-refresh-0.1.1-1-any.pkg.tar.zst)
 [![Platform](https://img.shields.io/badge/Platform-KDE_Plasma_6_%7C_Linux-1793d1?style=for-the-badge&logo=kde&logoColor=white)](https://kde.org/plasma-desktop/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](LICENSE)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy%20Me%20a%20Coffee-ff5e5b?logo=ko-fi&logoColor=white&style=for-the-badge)](https://ko-fi.com/russellmilliner)
@@ -46,12 +46,12 @@ Build from source with `makepkg` or install the release package from [GitHub Rel
 
 ```bash
 # Option A: Install prebuilt release package
-sudo pacman -U kde-bing-potd-refresh-0.1.0-1-any.pkg.tar.zst
+sudo pacman -U kde-bing-potd-refresh-0.1.1-1-any.pkg.tar.zst
 systemctl --user enable --now kde-bing-potd-refresh.timer
 
 # Option B: Build and install locally via ./scripts/build-packages.sh
 ./scripts/build-packages.sh
-sudo pacman -U dist/kde-bing-potd-refresh-0.1.0-1-any.pkg.tar.zst
+sudo pacman -U dist/kde-bing-potd-refresh-0.1.1-1-any.pkg.tar.zst
 systemctl --user enable --now kde-bing-potd-refresh.timer
 ```
 
@@ -99,7 +99,7 @@ To uninstall completely:
 | `--cache-dir <PATH>` | `$XDG_CACHE_HOME/plasma_engine_potd` | Override KDE Plasma POTD cache directory |
 | `--install-timer` | `false` | Write `kde-bing-potd-refresh.{service,timer}` into `~/.config/systemd/user/` and enable the timer |
 | `--uninstall-timer` | `false` | Disable and remove the `systemd --user` service and timer units |
-| `-V`, `--version` | — | Print installed version (`kde-bing-potd-refresh 0.1.0`) |
+| `-V`, `--version` | — | Print installed version (`kde-bing-potd-refresh 0.1.1`) |
 
 ### Common Commands
 

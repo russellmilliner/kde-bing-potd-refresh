@@ -1,0 +1,8 @@
+[Unit]
+Description=Refresh KDE Plasma Bing Picture of the Day after Pacific midnight rotation
+After=network-online.target plasma-plasmashell.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/kde-bing-potd-refresh

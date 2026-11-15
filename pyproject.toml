@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kde-bing-potd-refresh"
+version = "0.1.0"
+description = "KDE Plasma 6 Bing Picture of the Day post-rotation timezone sync CLI and systemd user timer"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [
+  { name = "Russell Milliner", email = "russell.milliner@gmail.com" }
+]
+keywords = ["kde", "plasma", "wallpaper", "bing", "potd", "systemd"]
+classifiers = [
+  "Environment :: X11 Applications :: KDE",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Desktop Environment :: K Desktop Environment (KDE)",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/russellmilliner/kde-bing-potd-refresh"
+Repository = "https://github.com/russellmilliner/kde-bing-potd-refresh"
+Changelog = "https://github.com/russellmilliner/kde-bing-potd-refresh/blob/main/CHANGELOG.md"
+
+[project.scripts]
+kde-bing-potd-refresh = "kde_bing_potd_refresh.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kde_bing_potd_refresh = ["data/*.service", "data/*.timer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

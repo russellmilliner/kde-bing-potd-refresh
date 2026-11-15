@@ -1,0 +1,13 @@
+[Unit]
+Description=Daily post-rotation refresh for KDE Plasma Bing Picture of the Day
+
+[Timer]
+# Bing rotates the en-US feed at 00:00 Pacific Time (03:00 Eastern Time year-round)
+OnCalendar=*-*-* 00:05:00 America/Los_Angeles
+OnCalendar=*-*-* 00:35:00 America/Los_Angeles
+OnStartupSec=45s
+Persistent=true
+AccuracySec=1m
+
+[Install]
+WantedBy=timers.target

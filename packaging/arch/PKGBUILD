@@ -1,0 +1,27 @@
+# Maintainer: Russell Milliner <russell.milliner@gmail.com>
+pkgname=kde-bing-potd-refresh
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="KDE Plasma 6 Bing Picture of the Day post-rotation timezone sync CLI and systemd user timer"
+arch=('any')
+url="https://github.com/russellmilliner/kde-bing-potd-refresh"
+license=('Apache-2.0')
+depends=('python' 'kdeplasma-addons' 'qt6-tools' 'systemd')
+makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
+source=("kde_bing_potd_refresh-${pkgver}.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/kde_bing_potd_refresh-$pkgver"
+  python -m build --wheel --no-isolation
+}
+
+package() {
+  cd "$srcdir/kde_bing_potd_refresh-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 systemd/kde-bing-potd-refresh.timer "$pkgdir/usr/lib/systemd/user/kde-bing-potd-refresh.timer"
+  sed 's|^ExecStart=.*|ExecStart=/usr/bin/kde-bing-potd-refresh|' systemd/kde-bing-potd-refresh.service \
+    | install -Dm644 /dev/stdin "$pkgdir/usr/lib/systemd/user/kde-bing-potd-refresh.service"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
